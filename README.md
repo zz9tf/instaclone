@@ -2,8 +2,8 @@
 
 This project is a full stack clone of instagram app 
 
-Front end: Apollo, React, React Hook Form, Styled Components, React Hooks
+Front: Apollo, React, React Hook Form, Styled Components, React Hooks
 
-Back end: Apollo Server, GraphQL, Prisma Studio, Prisma Migrate, Prisma Client
+Back: Apollo Server, GraphQL, Prisma Studio, Prisma Migrate, Prisma Client
 
-Application: React Native, ExpoReact Native CLI, React Navigation, React Native
+IOS & Android: React Native, ExpoReact Native CLI, React Navigation, React Native
