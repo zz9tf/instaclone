@@ -3,16 +3,16 @@
 This project is a full stack software "Friends".
 
 Front-end tech:
-- [X] Apollo
+- [X] [Apollo]()
 - [X] React
 - [X] React Hook Form
 - [X] Styled Components
 - [X] React Hooks
 
 Back-end tech: 
-- [X] Apollo Server
-- [X] GraphQL
-- [X] Prisma
+- [X] [Apollo Server](#apollo-server--graphql)
+- [X] [GraphQL](#apollo-server--graphql)
+- [X] [Prisma](#prisma)
   - [X] Studio
   - [X] Migrate
   - [X] Client
@@ -24,8 +24,9 @@ IOS & Android:
 - [X] React Navigation
 
 Helpful dependence
-- [X] nodemon
-- [X] babel
+- [X] [nodemon](#nodemon)
+- [X] [babel](#babel)
+- [X] [typescript](#typescript)
   
 # Appendix
 
@@ -46,16 +47,20 @@ Helpful dependence
     import { startStandaloneServer } from '@apollo/server/standalone';
 
     // The GraphQL schema
+    
+    // Create your defination first
     const typeDefs = `#graphql
     type Query {
         hello: String
     }
     `;
+    // With ! we will requir the particular field doesn't return null.
 
     // A map of functions which return data for the schema.
     const resolvers = {
     Query: {
         hello: () => 'world',
+        // function: (root, args, context, info) => "",
     },
     };
 
@@ -126,3 +131,21 @@ This tool helps you to support the latest version of JavaScript through syntax t
     npm run dev
     ```
     It will automatically use babel and nodemon to run our app.
+
+## [Prisma](https://www.prisma.io/)
+
+1. Installation
+   The following command allows you to install the Prisma CLI as a development dependency in the project
+   ```
+   npm install prisma --save-dev
+   ```
+   And then, set up Prisma with the init command of the Prisma CLI
+   ```
+   npx prisma init --datasource-provider sqlite
+   ```
+   This command will create prisma folder.
+
+2. Usage
+
+
+## [Typescript](https://www.typescriptlang.org/)
