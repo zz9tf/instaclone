@@ -16,6 +16,8 @@ Back-end tech:
   - [X] Studio
   - [X] Migrate
   - [X] Client
+- [X] [mysql](https://www.mysql.com/)
+- [ ] MongoDB
 
 IOS & Android: 
 - [X] Expo
@@ -54,7 +56,7 @@ Helpful dependence
         hello: String
     }
     `;
-    // With ! we will requir the particular field doesn't return null.
+    // With ! this token will require the particular field doesn't return null.
 
     // A map of functions which return data for the schema.
     const resolvers = {
@@ -93,11 +95,11 @@ This package allows your app automatically restart after file changes.
     nodemon [your node app]
     ```
 
-    For this app, we add the following line in our package.json at "scripts":
+    For this app, I add the following line in our package.json at "scripts":
     ```
     "dev": "nodemon --exec babel-node server.js". 
     ```
-    So that, after git clone this project, we can run this app by:
+    So that, after git clone this project, you can run this app by:
     ```
     npm run dev
     ```
@@ -115,24 +117,25 @@ This tool helps you to support the latest version of JavaScript through syntax t
    ```
 
 2. Usage
-   For using babel for our app, we add a new file called "babel.config.json" with the following content:
+   For using babel for our app, I add a new file called "babel.config.json" with the following content:
    ```
     {
     "presets": ["@babel/preset-env"]
     }
    ```
 
-   And then, we add a new line(See nodemon usage):
+   And then, I add a new line(See nodemon usage):
    ```
    "dev": "nodemon --exec babel-node server" 
    ```
-   So that, after git clone this project, we can run this app by:
+   So that, after git clone this project, you can run this app by:
     ```
     npm run dev
     ```
     It will automatically use babel and nodemon to run our app.
 
 ## [Prisma](https://www.prisma.io/)
+Prisma is a tool to talk with our app database.
 
 1. Installation
    The following command allows you to install the Prisma CLI as a development dependency in the project
@@ -146,6 +149,32 @@ This tool helps you to support the latest version of JavaScript through syntax t
    This command will create prisma folder.
 
 2. Usage
+    I used the codes like the following codes for Prisma to talk with database, examples:
+    ```
+    generator client {
+    provider = "prisma-client-js"
+    }
 
+    datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+    }
+
+    model Movie {
+    id Int @default(autoincrement()) @id
+    title String
+    year Int
+    genre String?
+    createdAt DateTime @default(now())
+    updateAt DateTime @updatedAt
+    }
+    ```
+    For this app, I tried [mysql](https://www.mysql.com/) database(locally) and [mongoDB](https://www.mongodb.com/) database(remotely).
+
+    For the final step, you still need to run the following CLI commands:
+
+    ```
+    npx prisma migrate dev --name init
+    ```
 
 ## [Typescript](https://www.typescriptlang.org/)

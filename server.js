@@ -4,6 +4,7 @@ import {ApolloServerPluginLandingPageLocalDefault} from "apollo-server-core";
 // Create your defination first
 const typeDefs = gql`
     type Movie {
+        id: Int,
         title:String,
         year: Int
     }

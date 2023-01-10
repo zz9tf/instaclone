@@ -6,6 +6,15 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model Movie {
+  id Int @default(autoincrement()) @id
+  title String
+  year Int
+  genre String?
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
 }
