@@ -3,10 +3,14 @@ import {ApolloServerPluginLandingPageLocalDefault} from "apollo-server-core";
 
 // Create your defination first
 const typeDefs = gql`
+    scalar DateTime
     type Movie {
-        id: Int,
-        title:String,
-        year: Int
+        id: String!
+        title:String!
+        year: Int!
+        genre: String
+        createdAt: DateTime!
+        updateAt: DateTime!
     }
     type Query {
         movies: [Movie]

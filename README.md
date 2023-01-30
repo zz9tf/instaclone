@@ -3,7 +3,7 @@
 This project is a full stack software "Friends".
 
 Front-end tech:
-- [X] [Apollo]()
+- [X] [Apollo](#apollo-server--graphql)
 - [X] React
 - [X] React Hook Form
 - [X] Styled Components
@@ -146,6 +146,10 @@ Prisma is a tool to talk with our app database.
    ```
    npx prisma init --datasource-provider sqlite
    ```
+   For mongodb
+   ```
+   npx prisma init --datasource-provider mongodb
+   ```
    This command will create prisma folder.
 
 2. Usage
@@ -168,6 +172,7 @@ Prisma is a tool to talk with our app database.
     createdAt DateTime @default(now())
     updateAt DateTime @updatedAt
     }
+    // ? is a syntax representing that this variable is not required.
     ```
     For this app, I tried [mysql](https://www.mysql.com/) database(locally) and [mongoDB](https://www.mongodb.com/) database(remotely).
 
@@ -175,6 +180,10 @@ Prisma is a tool to talk with our app database.
 
     ```
     npx prisma migrate dev --name init
+    ```
+    But if you use mongodb, since mongodb is a document database instead of SQL databases, you need to run the following command
+    ```
+    npx prisma generate
     ```
 
 ## [Typescript](https://www.typescriptlang.org/)

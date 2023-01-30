@@ -18,13 +18,14 @@
   "homepage": "https://github.com/zz9tf/instaclone#readme",
   "dependencies": {
     "@prisma/client": "^4.8.1",
-    "apollo-server": "^3.10.1",
+    "apollo-server": "^3.11.1",
     "graphql": "^16.6.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.18.10",
     "nodemon": "^2.0.19",
-    "prisma": "^4.8.1"
+    "prisma": "^4.9.0"
   }
 }

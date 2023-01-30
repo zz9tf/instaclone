@@ -6,15 +6,16 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Movie {
-  id Int @default(autoincrement()) @id
+  id String @id @default(auto()) @map("_id") @db.ObjectId
   title String
   year Int
   genre String?
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
 }
+// ? is a syntax representing that this variable is not required.
